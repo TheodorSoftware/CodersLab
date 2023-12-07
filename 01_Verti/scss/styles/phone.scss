@@ -1,0 +1,60 @@
+@use 'sass:color';
+
+@import '../variables/colors.scss';
+@import '../variables/breakpoints.scss';
+@import '../mixins/flex-settings.scss';
+@import '../mixins/font-settings.scss';
+@import '../fonts/fonts.scss';
+
+@media only screen and (max-width: $small-device-width){
+
+    .container{
+        padding: 20px;
+        @include flex-settings(column, flex-start,center);
+
+        &__header{
+            &__navbar{
+                display: none;
+            }
+    
+            &__burger__menu{
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: 5px;
+                background-color: transparent;
+                border: 1px solid transparent;
+                border-radius: 5px;
+    
+                &:active{
+                    background-color: $active-burger-menu-button-color;
+                }
+            }
+        }
+
+        &__content{
+
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            @include flex-settings(column, flex-start,center);
+
+            &__labels{
+    
+                &__paragraf{
+                    margin-top: 5px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            &__buttons{
+                width: 100%;
+                &__action__button{
+                    margin-bottom: 5px;
+                }
+    
+            }
+        }
+    }
+}
